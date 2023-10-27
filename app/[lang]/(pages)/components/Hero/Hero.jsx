@@ -82,6 +82,7 @@ export default function Hero() {
                     parallax={true}
                     modules={[Parallax, Autoplay]}
                     className="mySwiper"
+                    allowTouchMove={false}
                     autoplay={{
                         delay: 2000,
                     }}
