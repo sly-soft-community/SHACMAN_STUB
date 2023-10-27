@@ -3,7 +3,7 @@
 
 
 import React, { useRef, useState } from 'react';
-import { Swiper, SwiperSlide, Autoplay } from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import styles from './Hero.module.scss'
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -18,7 +18,7 @@ import Image from 'next/image';
 // import './styles.css';
 
 // import required modules
-import { Parallax, Pagination, Navigation } from 'swiper';
+import { Parallax, Autoplay } from 'swiper';
 
 export default function Hero() {
     const arrayInfo = [
@@ -80,16 +80,16 @@ export default function Hero() {
                     }}
                     speed={600}
                     parallax={true}
-                    modules={[Parallax]}
+                    modules={[Parallax, Autoplay]}
                     className="mySwiper"
                     autoplay={{
-                        delay: 3000,
+                        delay: 2000,
                     }}
                 >
                     <div
                         slot="container-start"
                         className="parallax-bg"
-                        data-swiper-parallax="-23%"
+                        data-swiper-parallax="-66%"
                     ></div>
                     <div className={styles.slide}>
                         <SwiperSlide>
