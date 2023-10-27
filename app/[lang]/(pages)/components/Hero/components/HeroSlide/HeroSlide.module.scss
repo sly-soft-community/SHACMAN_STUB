@@ -1,0 +1,120 @@
+@import "@/styles/mixins.scss";
+
+.slide {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 55px;
+
+    &__contantBox {
+        height: 365px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__imgWrapper {
+        margin-top: 35px;
+        border-radius: 100%;
+        width: 450px;
+        height: 450px;
+        overflow: hidden;
+    }
+
+    &__title {
+        max-width: 470px;
+        font-weight: 700;
+        font-size: 50px;
+        line-height: 60px;
+        display: flex;
+        align-items: center;
+        text-transform: uppercase;
+
+        color: #465067;
+    }
+
+    &__img {
+        display: block;
+        width: 450px;
+        height: 450px;
+    }
+
+    &__btn {
+        padding: 20px 44px;
+        width: fit-content;
+        background: linear-gradient(88deg, #0041a4 3.4%, #00a386 98.93%);
+        box-shadow: 0px 10px 50px rgba(0, 221, 185, 0.25);
+        border-radius: 15px;
+
+        font-weight: 700;
+        min-width: 270px;
+        font-size: 16px;
+        line-height: 20px;
+        color: #ffffff;
+        text-decoration: none;
+        text-align: center;
+    }
+}
+
+@include respond-to("lg") {
+    .slide {
+        grid-template-columns: 1fr;
+        grid-template-rows: 450px auto;
+        grid-gap: 35px;
+
+        &__imgBox {
+            grid-row-start: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        &__contantBox {
+            display: flex;
+            align-items: center;
+            height: 350px;
+            gap: 50px;
+        }
+        &__title {
+            text-align: center;
+        }
+        &__imgWrapper {
+            margin-top: 0;
+        }
+    }
+}
+
+@include respond-to("sm") {
+    .slide {
+        grid-template-columns: 1fr;
+        grid-template-rows: 210px auto;
+        grid-gap: 30px;
+
+        &__imgWrapper {
+            width: 210px;
+            height: 210px;
+        }
+
+        &__img {
+            width: 210px;
+            height: 210px;
+        }
+
+        &__contantBox {
+            gap: 30px;
+            height: 170px;
+        }
+        &__title {
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 24px;
+        }
+        &__btn {
+            padding: 20px 44px;
+            width: 100%;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 20px;
+        }
+    }
+}

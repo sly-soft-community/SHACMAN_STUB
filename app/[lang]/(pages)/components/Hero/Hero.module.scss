@@ -1,0 +1,161 @@
+@import "@/styles/mixins.scss";
+
+.wrapper {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr minmax(300px, 50%);
+    overflow: hidden;
+    @include respond-to("lg") {
+        grid-template-columns: 1fr;
+    }
+}
+
+.slider {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    position: relative;
+    @include respond-to("lg") {
+        display: none;
+    }
+
+    &__logoImg {
+        position: absolute;
+        width: 30vw;
+        // height: 96px;
+        left: 141px;
+        top: 96px;
+        z-index: 999;
+    }
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+
+    @include respond-to("lg") {
+        background: green;
+    }
+
+    &__img {
+        height: 100%;
+    }
+
+}
+
+.contantWrapper {
+    width: 100%;
+    height: 100%;
+    padding-top: 94px;
+    padding-right: 20px;
+}
+
+.contant {
+    max-width: 560px;
+    padding-left: 10px;
+    margin-left: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    @include respond-to("lg") {
+        margin: 0 auto;
+    }
+
+    &__imgBg {
+        position: absolute;
+        z-index: -1;
+        top:56px;
+        left: 115px;
+        height: 70vh;
+    }
+}
+
+.title {
+    color: #0E0E0E;
+    font-family: "Montserrat";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 40px;
+    font-variant: small-caps;
+    margin-bottom: 20px;
+    @include respond-to("lg") {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+}
+
+.subtitle {
+    color: #0E0E0E;
+    font-family: "Montserrat";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+    font-variant: small-caps;
+    margin-bottom: 24px;
+    @include respond-to("lg") {
+        font-size: 16px;
+        margin-bottom: 18px;
+    }
+}
+
+.text {
+    color: #1A1A1A;
+    font-family: "Montserrat";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    font-variant: small-caps;
+    margin-bottom: 20px;
+    @include respond-to("lg") {
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+}
+
+.info {
+    margin-top: auto;
+    margin-bottom: 80px;
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    &__item {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+    }
+
+    &__img {
+        width: 32px;
+        height: 32px;
+    }
+
+    &__text {
+        color: #1A1A1A;
+        font-family: "Montserrat";
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        font-variant: small-caps;
+        @include respond-to("lg") {
+            font-size: 15px;
+        }
+    }
+
+    &__textBox {
+        display: flex;
+        flex-direction: column;
+        gap: 6px
+    }
+}
+
+

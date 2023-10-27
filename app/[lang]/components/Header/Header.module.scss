@@ -1,0 +1,209 @@
+@import "@/styles/mixins.scss";
+
+.wrapper {
+    // position: fixed;
+    position: absolute;
+    top: 40px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    // overflow: hidden;
+    z-index: 100;
+}
+
+.header {
+    background: white;
+    width: 100vw;
+    max-width: calc(var(--max-width));
+    padding: 21px 60px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+
+    &__btnBox {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    &__btn {
+        background: rgba(0, 56, 150, 1);
+        padding: 8px 16px;
+        border-radius: 8px;
+        min-width: 170px;
+
+        color: white;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    &__burger {
+        display: none;
+    }
+}
+
+.nav {
+    display: flex;
+    gap: 32px;
+
+    &__link {
+        color: rgba(39, 39, 39, 1);
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    &__link:hover {
+        color: rgba(0, 65, 164, 1);
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    &__item_sm {
+        display: none;
+    }
+}
+
+@media (max-width: 1150px) {
+    .nav {
+        position: absolute;
+        top: 100px;
+        right: 70px;
+
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        align-items: flex-end;
+        background: white;
+        padding: 15px;
+        border-radius: 8px;
+        z-index: 1000;
+
+        &.open {
+            display: flex;
+        }
+    }
+
+    .header {
+        margin: 0 15px;
+
+        &__btn {
+            display: none;
+        }
+    }
+
+    .header__burger {
+        display: flex;
+        align-items: center;
+        width: 26px;
+        height: 26px;
+        cursor: pointer;
+        justify-self: end;
+        margin-right: 5px;
+
+        &_icon {
+            display: block;
+            background: rgba(39, 39, 39, 1);
+            width: 24px;
+            height: 2px;
+            border-radius: 1px;
+            position: relative;
+        }
+
+        &_icon::before {
+            content: "";
+            display: block;
+            position: absolute;
+            background: rgba(39, 39, 39, 1);
+            width: 24px;
+            height: 2px;
+            bottom: 8px;
+            transition: 0.4s;
+        }
+
+        &_icon::after {
+            content: "";
+            display: block;
+            position: absolute;
+            background: rgba(39, 39, 39, 1);
+            width: 24px;
+            height: 2px;
+            top: 8px;
+            transition: 0.4s;
+        }
+
+        &_icon.open {
+            background: transparent;
+        }
+
+        &_icon.open::before {
+            bottom: 0;
+            transform: rotate(-45deg);
+        }
+
+        &_icon.open::after {
+            transform: rotate(45deg);
+            top: 0;
+        }
+    }
+}
+
+@include respond-to("sm") {
+    .wrapper {
+        // overflow: hidden;
+        top: 0;
+        z-index: 10;
+    }
+    .header {
+        // box-shadow: none;
+        margin: 0;
+        border-radius: 0;
+        padding: 15px 20px;
+        &__btn_sm {
+            color: #fff;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 20px;
+            border-radius: 8px;
+            background: var(--main-synergy, #003896);
+            padding: 5px 16px;
+        }
+
+        &.open {
+            box-shadow: none;
+        }
+    }
+    .nav {
+        padding-top: 15px;
+        top: -500px;
+        right: 0;
+        display: flex;
+        transition: 0.9s;
+        z-index: -1;
+        width: 100%;
+        align-items: center;
+        gap: 25px;
+        padding-bottom: 20px;
+
+        font-family: "Gilroy";
+        font-weight: 600;
+        font-size: 16px;
+
+        border-radius: 0 0 30px 30px;
+
+        &.open {
+            top: 66px;
+        }
+        &__item_sm {
+            display: block;
+        }
+    }
+    .socialRow {
+        display: flex;
+        gap: 27px;
+    }
+}
