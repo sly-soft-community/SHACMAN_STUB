@@ -28,7 +28,7 @@ export default function Home({ params: { lang } }) {
 
     return (
         <main className={styles.main}>
-            <Hero dictionary={dictionary} />
+            <Hero />
         </main>
     );
 }

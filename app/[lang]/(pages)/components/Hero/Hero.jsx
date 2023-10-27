@@ -85,6 +85,7 @@ export default function Hero() {
                     allowTouchMove={false}
                     autoplay={{
                         delay: 2000,
+                        disableOnInteraction: false
                     }}
                 >
                     <div
